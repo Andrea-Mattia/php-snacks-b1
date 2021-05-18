@@ -85,7 +85,21 @@
              * Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
              */
 
-            
+            $name = $_GET['name'];
+            $mail = $_GET['mail'];
+            $age = (int)$_GET['age'];
+
+            var_dump($age);
+
+            if ( empty($name) || (strlen($name) < 3) ) {
+                echo 'Accesso negato. Il nome è necessario e deve essere lungo almeno 3 caratteri.';
+            } elseif ( empty($mail) || strpos($mail, '@') === false || strpos($mail, '.') === false ) {
+                echo 'Accesso negato. La mail è necessaria e deve contenere una chiocciola e un punto.';
+            } elseif ( empty($age) || is_nan($age) ) {
+                echo 'Accesso negato. L\'età è necessaria e deve essere un numero.';
+            } else {
+                echo "Accesso riuscito. Benvenuto $name";
+            }
             ?>
 
         </section>
