@@ -74,6 +74,8 @@
         <section>
             <h2>Snack 2</h2>
 
+            <p>Crea una query string inserendo nome, mail ed età.</p>
+
             <?php
             /**
              * PHP Snack 2:
@@ -99,6 +101,33 @@
                 echo "Accesso riuscito. Benvenuto $name";
             }
             ?>
+
+        </section>
+
+        <section>
+            <h2>Snack 3 (Bonus)</h2>
+
+            <?php
+            /**
+             * PHP Snack 3 Bonus (solo come bonus e solo se completati i due precedenti)
+             * Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà contenere lo stesso numero più di una volta
+             */
+
+            $numbers = [];
+
+            while (count($numbers) < 15) {
+                $num = rand(1, 100);
+                if ( !in_array($num, $numbers) ) {
+                    $numbers[] = $num;
+                }
+            }
+            ?>
+
+            <ol>
+                <?php for ($i=0; $i < count($numbers); $i++) : ?> 
+                    <li><?php echo $numbers[$i] ?></li>
+                <?php endfor; ?>
+            </ol>
 
         </section>
     </main>
