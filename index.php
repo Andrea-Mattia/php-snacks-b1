@@ -89,8 +89,6 @@
             $mail = $_GET['mail'];
             $age = (int)$_GET['age'];
 
-            var_dump($age);
-
             if ( empty($name) || (strlen($name) < 3) ) {
                 echo 'Accesso negato. Il nome è necessario e deve essere lungo almeno 3 caratteri.';
             } elseif ( empty($mail) || strpos($mail, '@') === false || strpos($mail, '.') === false ) {
